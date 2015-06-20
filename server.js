@@ -10,9 +10,23 @@ server.connection({
 
 server.route({
     method: 'GET',
-    path:'/hello', 
+    path:'/product/{upc}', 
     handler: function (request, reply) {
-       reply('hello world');
+       reply([{
+             name: "Product 2",
+             upc: "12345-67890" 
+      }]);
+    }
+});
+
+server.route({
+    method: 'GET',
+    path:'/coupon/{upc}', 
+    handler: function (request, reply) {
+       reply([{
+             name: "Coupon 3",
+             upc: "98765-43210" 
+      }]);
     }
 });
 
