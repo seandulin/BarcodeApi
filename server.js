@@ -14,7 +14,7 @@ server.route({
     handler: function (request, reply) {
        reply([{
              name: "Product 2",
-             upc: "12345-67890" 
+             upc: encodeURIComponent(request.params.upc)
       }]);
     }
 });
@@ -25,7 +25,7 @@ server.route({
     handler: function (request, reply) {
        reply([{
              name: "Coupon 3",
-             upc: "98765-43210" 
+             upc: encodeURIComponent(request.params.upc)
       }]);
     }
 });
